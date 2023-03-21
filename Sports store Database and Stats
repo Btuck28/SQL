@@ -1,0 +1,31 @@
+CREATE TABLE Sports (ID INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, qunatity INTEGER );
+INSERT into Sports Values (1, "football", "teamsports", 25, 7);
+INSERT into Sports Values (2, "baseball", "teamsports", 20, 10);
+INSERT into Sports Values (3, "gloves", "teamsports", 15, 28);
+INSERT into Sports Values (4, "helmets", "teamsports", 22, 3);
+INSERT into Sports Values (5, "shoes", "teamsports", 60, 30);
+INSERT into SPorts Values (6, "gum", "cashier", 1, 27);
+INSERT into Sports Values (7, "facemask", "teamsports", 3, 2);
+INSERT into Sports Values (8, "Hockey", "teamsports", 7, 12);
+INsert into Sports Values (9, "cleats", "teamsports", 35, 10);
+INSERT into Sports Values (10, "pants", "apparel", 40, 33);
+INSERT into Sports Values (11, "shirts", "apparel", 28, 16);
+INSERT into Sports Values (12, "shorts", "apparel", 11, 33);
+INsert into Sports Values (13, "water bottle", "cashier", 12, 6);
+INSERT into Sports Values (14, "leggings", "apparel", 2, 5);
+INSERT into Sports Values (15, "headphones", "cashier", 10, 3);
+
+--display the databse ordered by price.
+SELECT * FROM Sports
+ORDER BY Price desc;
+
+--what is the avg price of items in the bulk section?
+SELECT AVG(PRICE) "AVG bulk item price"
+FROM Sports
+WHERE Section='bulk';
+
+--what are the most 5 priced items?
+SELECT item, section, price
+From Sports
+Order by price desc
+limit 5
